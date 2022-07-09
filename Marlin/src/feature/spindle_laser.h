@@ -196,6 +196,7 @@ public:
    *    This mode allows a global power shutdown action to occur.
    */
   static void set_enabled(bool enable) {
+    TERN_(LASER_PWM_DEBUG, SERIAL_ECHOLNPGM("set_enabled enable: ", enable));
     switch (cutter_mode) {
       case CUTTER_MODE_STANDARD:
         apply_power(enable ? TERN(SPINDLE_LASER_USE_PWM, (power ?: (unitPower ? upower_to_ocr(cpwr_to_upwr(SPEED_POWER_STARTUP)) : 0)), 255) : 0);

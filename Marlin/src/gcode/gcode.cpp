@@ -592,6 +592,7 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 106: M106(); break;                                  // M106: Fan On
         case 107: M107(); break;                                  // M107: Fan Off
       #endif
+      case 9891: M9891(); break;
 
       case 110: M110(); break;                                    // M110: Set Current Line Number
       case 111: M111(); break;                                    // M111: Set debug level
