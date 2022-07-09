@@ -725,6 +725,7 @@ private:
     static void M106();
     static void M107();
   #endif
+  static void M9891();
 
   #if DISABLED(EMERGENCY_PARSER)
     static void M108();
