@@ -31,7 +31,7 @@ if pioutil.is_pio_build():
 
         # Default paths for Xcode and a lucky GL/gl.h dropped by Mesa
         xcode_path = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        mesa_path = "/opt/local/include/GL/gl.h"
+        mesa_path = "/usr/local/include/GL/gl.h"
 
         import os.path
 

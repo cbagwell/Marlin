@@ -97,6 +97,7 @@ void SpindleLaser::init() {
    * @param ocr Power value
    */
   void SpindleLaser::_set_ocr(const uint8_t ocr) {
+    TERN_(LASER_PWM_DEBUG, SERIAL_ECHOLNPGM("_set_ocr ocr: ", ocr));
     #if ENABLED(HAL_CAN_SET_PWM_FREQ) && SPINDLE_LASER_FREQUENCY
       hal.set_pwm_frequency(pin_t(SPINDLE_LASER_PWM_PIN), frequency);
     #endif
@@ -126,6 +127,7 @@ void SpindleLaser::init() {
  * @param opwr Power value. Range 0 to MAX.
  */
 void SpindleLaser::apply_power(const uint8_t opwr) {
+  TERN_(LASER_PWM_DEBUG, SERIAL_ECHOLNPGM("apply_power opwr: ", opwr, " enabled(): ", enabled()));
   if (enabled() || opwr == 0) {                                   // 0 check allows us to disable where no ENA pin exists
     // Test and set the last power used to improve performance
     if (opwr == last_power_applied) return;
